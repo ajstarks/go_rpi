@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"time"
 
-	"openvg"
+	"github.com/ajstarks/openvg"
 )
 
 func main() {
@@ -28,16 +28,16 @@ func main() {
 
 		openvg.FillColor("white")
 		l1, l2, l3 := clock()
-		openvg.TextMid(w2, h2+h2/2, l1, "serif", width/15)
-		openvg.TextMid(w2, h2, l2, "serif", width/7)
-		openvg.TextMid(w2, h2-h2/2+100, l3, "serif", width/15)
-		openvg.TextMid(w2, h2-h2/2-20, dim, "serif", width/30)
+		openvg.TextMid(w2, h2+h2/2, l1, "serif", height/12)
+		openvg.TextMid(w2, h2, l2, "serif", height/6)
+		openvg.TextMid(w2, h2-h2/2+100, l3, "serif", height/12)
+		openvg.TextMid(w2, h2-h2/2-20, dim, "serif", height/24)
 
 		l4 := hwinfo()
-		openvg.TextMid(w2, h2-h2/2-100, l4, "serif", width/30)
+		openvg.TextMid(w2, h2-h2/2-100, l4, "serif", height/24)
 
 		l5 := cpuTemperature()
-		openvg.TextMid(w2, h2-h2/2-180, l5, "serif", width/30)
+		openvg.TextMid(w2, h2-h2/2-180, l5, "serif", height/24)
 
 		openvg.End()
 		time.Sleep(1000 * time.Millisecond)
